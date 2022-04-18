@@ -1,9 +1,13 @@
 import './App.css';
+import ItemListContainer from './components/container/ItemListContainer';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (
     <>
-      <h1>Plot Twist Bookstore</h1>
+      <Navbar />
+
+      <ItemListContainer greeting= 'Bienvenido a Plot Twist Bookstore!'/>
     </>
   );
 }

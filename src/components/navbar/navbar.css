@@ -1,0 +1,211 @@
+/* ==== Navbar ==== */
+.navbar {
+    width: 100vw;
+    background-color: #fff;
+    padding-top: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.navbar__container{
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-inline: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+/* ==== Navbar Logo ==== */
+.navbar__title{
+    font-family: var(--logo-font);
+    color: #000;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.navbar__title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa-book-open {
+    font-size: 1.3rem;
+}
+
+.bookstore {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 300;
+    display: block;
+}
+
+.bookstore::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+}
+
+/* ===== Navbar Menu ==== */
+.navbar__menu-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar__menu {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.navbar__menu li {
+    padding-block: 0.5rem;
+    position: relative;
+}
+
+.navbar__menu li:nth-child(2) {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.navbar__menu a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar__menu a:hover {
+    color: var(--accent-color);
+}
+
+/* ==== Cart Widget ==== */
+.navbar__cart-widget{
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon img {
+    width: 2.1rem;
+    aspect-ratio: 1;
+}
+
+.navbar__contador-carrito{
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    padding-inline: 0.45rem;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar__cart-widget:hover .navbar__contador-carrito{
+    background-color: var(--accent-color);
+}
+
+/* ==== Burger Button for Mobile ==== */
+.navbar__burguer-button {
+    height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar__burguer-button div {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+}
+
+/* ==== MEDIA QUERIES ==== */
+@media screen and (max-width: 1000px) {
+    .navbar__title{
+        font-size: 1.2rem;
+    }
+    .fa-book-open {
+        font-size: 1rem;
+    }
+    .bookstore {
+        font-size: 0.9rem;
+    }
+    .navbar__menu {
+        font-size: 0.8rem;
+    }
+
+    .cart-icon img {
+        width: 1.9rem;
+    }
+    .navbar__contador-carrito{
+        font-size: 0.85rem;
+        border-radius: 50%;
+        padding-inline: 0.45rem;
+        aspect-ratio: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__menu {
+        position: fixed;
+        right: 0;
+        height: calc(100vh - 79.3px);
+        top: 79.3px;
+        background-color: var(--primary-color);
+
+        padding-block: 2rem;
+
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar__menu-show {
+        transform: translateX(0);
+    }
+
+    .navbar__menu li {
+        width: 85%;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* opacity: 0; */
+    }
+
+    .navbar__menu li:not(:last-child) {
+        border-bottom: 1px solid var(--light-color);
+        border-left: none;
+        border-right: none;
+    }
+
+    .navbar__menu a {
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    .navbar__burguer-button {
+        display: flex;
+    }
+}

@@ -1,13 +1,28 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Poppins:wght@400;500;600;700&display=swap");
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  /* Fonts */
+  --logo-font: "Cormorant Garamond", serif;
+  --body-font:  "Poppins", "sans-serif";
+  --title-sans-serif: "Bebas Neue", cursive;
+  --title-serif: "Noto Serif Display", serif;
+  /* colors */
+  --primary-color: hsl(178, 60%, 32%);
+  --secondary-color: hsl(184, 36%, 60%);
+  --light-color: hsl(184, 42%, 77%);
+  --dark-color: hsl(193, 61%, 20%);
+  --accent-color: hsl(256, 33%, 62%);
+  --light-accent-color: hsl(255, 55%, 78%);
+  --dark-accent-color: hsl(256, 41%, 47%);
 }
