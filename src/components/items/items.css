@@ -1,0 +1,131 @@
+
+/* ==== ITEM LIST ==== */
+.item-list {
+    width: 100%;
+    margin-block: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    row-gap: 2rem;
+}
+
+/* ===== ITEM ===== */
+.card {
+    width: 90%;
+    height: 385px;
+    background-color: hsl(186, 100%, 98%);
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* box-shadow: -2px 3px 23px 3px rgb(0 0 0 / 15%); */
+    box-shadow: 2px 3px 18px 2px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card__img-container {
+    width: 100%;
+    height: 245px;
+    background-color: hsl(184, 38%, 72%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card__img {
+    width: 52%;
+    box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.25);
+}
+
+.add-button {
+    width: 18%;
+    display: grid;
+    place-content: center;
+    border: none;
+    cursor: pointer;
+    background-color:var(--dark-color);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -23px;
+    right: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-button:hover {
+    background-color: hsl(193, 80%, 27%);
+    transform: scale(1.05);
+}
+
+.add-button svg {
+    width: 100%;
+    color: #fff;
+}
+
+.card__body {
+    flex-grow: 1;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-info {
+    flex-grow: 1;
+}
+
+.book-title{
+    color: var(--dark-color);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.book-author{
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    color: #575e66;
+}
+
+.price-arrow-container {
+    display: flex;
+}
+
+.prices-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.previous-book-price {
+    font-size: 1rem;
+    color: #959da6;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.book-price{
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.arrow-container {
+    margin-left: auto;
+    margin-right: 7px;
+    color: #575e66;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrow-container:hover {
+    transform: translateX(7px);
+}

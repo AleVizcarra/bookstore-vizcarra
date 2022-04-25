@@ -7,7 +7,9 @@ function App() {
     <>
       <Navbar />
 
-      <ItemListContainer greeting= 'Bienvenido a Plot Twist Bookstore!'/>
+      <main className='main'>
+        <ItemListContainer />
+      </main>
     </>
   );
 }

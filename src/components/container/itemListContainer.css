@@ -1,13 +1,51 @@
 
 .item-list-container {
-    height: calc(100vh - 88.1px);
+    min-height: calc(100vh - 84.1px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.item-list-container h2 {
-    font-family: var(--title-serif);
-    font-size: 2.5rem;
-    font-style: italic;
+/* Loading Spinner */
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
 }
+  
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+  
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mensaje Error de Carga */
+.mensaje-error-carga {
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #959da6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mensaje-error-carga p {
+  margin-bottom: 5px;
+}
+
