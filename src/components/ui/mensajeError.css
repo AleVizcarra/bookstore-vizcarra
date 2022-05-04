@@ -1,0 +1,14 @@
+/* Mensaje Error de Carga */
+.mensaje-error-carga {
+    font-family: var(--body-font);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #959da6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mensaje-error-carga p {
+    margin-bottom: 5px;
+  }

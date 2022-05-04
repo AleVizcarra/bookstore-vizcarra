@@ -1,4 +1,4 @@
-
+import { useNavigate } from 'react-router-dom';
 import { images } from '../../helpers/images';
 import './items.css';
 
@@ -7,10 +7,16 @@ const Item = ({
   imagen,
   titulo,
   autor,
-  genero,
   precio,
-  precioDescuento
+  precioDescuento,
 }) => {
+
+  const navigate = useNavigate();
+
+  const handleItemDetail = () => {
+    navigate(`/item/${id}`);
+  }
+
   return (
     <div className='card animate__animated animate__fadeIn'>
         <div className='card__img-container'>
@@ -36,17 +42,20 @@ const Item = ({
             
 
           <div className='price-arrow-container'>
-            <div className='prices-container'>
+            <div className='card__prices-container'>
               { (precioDescuento !== '') && <p className='previous-book-price'>${precio}</p> }
               <p className='book-price'>
                 ${ (precioDescuento !== '') ? precioDescuento : precio }
               </p>
             </div>
-            <div className='arrow-container'>
+            <button 
+              className='arrow-button'
+              onClick={handleItemDetail}
+            >
               <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </div>
+            </button>
           </div>
             
         </div>

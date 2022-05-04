@@ -1,14 +1,29 @@
 import { booksStock } from "../data/booksStock";
 
-const getBooks = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(booksStock);
-    }, 2000);
-  });
+const getBooks = (categoryId) => {
+    return new Promise((resolve, reject) => {
 
-export const getBooksFromDB = async(setDataState) => {
+        (categoryId === '') ? (
+            setTimeout(() => {
+                resolve(booksStock);
+            }, 2000)
+        ) : (
+            setTimeout(() => {
+                resolve(booksStock.filter((book) => book[categoryId] === true));
+            }, 2000)
+        )
+    });
+};
+    
+
+export const getBooksFromDB = async(setDataState, categoryId) => {
+    setDataState({
+        loading: true,
+        data: null,
+      });
+    
     try {
-        const result = await getBooks;
+        const result = await getBooks(categoryId);
         setDataState({
             loading: false,
             data: result,

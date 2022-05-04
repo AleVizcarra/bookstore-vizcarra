@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Proyecto Plot Twist Bookstore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto consiste en el desarrollo de un e-commerce de una librería.
 
-## Available Scripts
+## Secciones
 
-In the project directory, you can run:
+Para navegar a las diferentes secciones de la página se instaló la dependencia react-router-dom y se utilizaron los elementos: `<BrowserRouter>`, el cual envuelve a toda la aplicación; `<Routes>`, el cual envuelve a todas las rutas; y `<Route>`, mediante la cual se indica el path y el elemento que se renderizará cuando la url contenga dicho path.
 
-### `npm start`
+### NavLink
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La página, hasta el momento, cuenta con home (tienda), que es lo que vemos en nuestra ruta principal, así como con las secciones "Populares", "Novedades" y "Descuentos", a las cuales podemos navegar a través de los links contenidos en el navbar.
+Cada link es un elemento `<NavLink>` de react-router-dom, el cual decidí usar porque es un link que detecta cuando está "activo", y permite que le asignemos un estilo que lo resalte entre los demás links, lo cual considero, brinda una mejor experiencia al usuario ya que le proporciona información sobre en qué sección se encuentra.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Componente ItemListContainer
 
-### `npm test`
+En el componente `<ItemListContainer>` se encuentra gran parte de la lógica para el funcionamiento de la página. Este es el componente que se renderiza en cada una de las secciones, es decir: home(tienda), populares, novedades y descuentos, sólo que el array de objetos que se mapea para generar las cards cambia dependiendo de la sección (category) en la que nos encontremos. Es decir:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- '/' -> Home (Tienda) -> `<ItemListContainer>` con el catálogo completo de libros disponibles
 
-### `npm run build`
+- ‘/category/:categoryId’ -> categoría seleccionada (populares, novedades, descuentos) -> `<ItemListContainer>` con los libros que formen parte de la categoría correspondiente
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para lograr esto, se utilizó el hook `useParams` de react-router-dom el cual nos permite obtener el valor de categoryId, el cual cambia dependiendo de la sección a la que estemos navegando, y mediante el hook `useEffect` que contiene la función que hace el llamado a la base de datos y tiene como dependencia "category", obtenemos el array de objetos correspondiente a la categoría para su mapeo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ItemDetail
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Es un componente al que tenemos acceso al hacer click en la flecha, que se encuentra en la parte inferior derecha de cada una de las cards, para obtener mayor información del producto correspondiente. Al hacer click sobre la flecha navegamos a la ruta ‘/item/:itemId’ la cual renderiza el componente `<ItemDetailContainer>` en el cual se utiliza el hook `useParams` para obtener el itemId y en base a ese id obtener de la base de datos el libro correspondiente para su renderización.
 
-### `npm run eject`
+## Estilos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para los estilos de la página decidí usar css puro (hasta el momento), ya que quería que tuviera un estilo más particular y esto en ocasiones es más difícil de lograr cuando se utilizan componentes prediseñados.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para una mejor experiencia de usuario decidí asignarle al navbar una `position: sticky` para que este sea visible en todo momento y que el usuario no tenga que regresar hasta la parte de arriba de la página para navegar a otra sección. El navbar será responsive por lo que para dispositivos móviles desarrollaré un menú desplegable.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Las cards de los libros se encuentran en un grid container con "auto-fit" de manera que se vaya adaptando la cantidad de columnas mostradas dependiendo del ancho de la pantalla.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Ideas a Futuro
 
-## Learn More
+- Agregar más secciones al home que proporcionen mayor información del negocio al usuario y llamen su atención para que tenga un aspecto de homepage ya que por el momento sólo se muestra el catálogo de productos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implementar un filtro que permita filtrar los libros por género literario.

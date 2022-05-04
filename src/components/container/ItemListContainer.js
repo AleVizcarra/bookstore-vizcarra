@@ -1,10 +1,22 @@
+import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import ItemList from '../items/ItemList';
 import { getBooksFromDB } from '../../helpers/getBooks';
 
 import './itemListContainer.css';
+import LoadingSpinner from '../ui/LoadingSpinner';
+import MensajeErrorCarga from '../ui/MensajeErrorCarga';
 
 const ItemListContainer = () => {
+  
+  const [seccion, setSeccion] = useState({
+    category: '',
+    tituloSeccion: 'Explora nuestro catálogo'
+  });
+
+  const {category, tituloSeccion} = seccion;
+
+  const params = useParams();
 
   const [dataState, setDataState] = useState({
     loading: true,
@@ -14,28 +26,37 @@ const ItemListContainer = () => {
   const {loading, data} = dataState;
 
   useEffect(() => {
-    getBooksFromDB(setDataState);
-  }, []);
+    getBooksFromDB(setDataState, category);
+  }, [category]);
+
+  useEffect(() => {
+    (params.categoryId !== undefined) ? (
+      setSeccion({ 
+        category: params.categoryId, 
+        tituloSeccion: params.categoryId 
+      })
+    ) : (
+      setSeccion({
+        category: '',
+        tituloSeccion: 'Explora nuestro catálogo'
+      })
+    );  
+  }, [params]);
 
   return (
     <section className='item-list-container'>
       {
         (loading) ? (
-          <div className="lds-dual-ring"></div>
+          <LoadingSpinner />
         ) : (
           (data) ? (
-            <ItemList books={ data }/>
+            <>
+              <h2 className='item-list-container__title'>{ tituloSeccion }</h2>
+              <ItemList books={ data }/>
+            </>
+            
           ) : (
-            <div className='mensaje-error-carga'>
-              <p>No fue posible cargar los productos</p>
-              <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.5 9C8.22386 9 8 8.77614 8 8.5C8 8.22386 8.22386 8 8.5 8C8.77614 8 9 8.22386 9 8.5C9 8.77614 8.77614 9 8.5 9Z" fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M15.5 9C15.2239 9 15 8.77614 15 8.5C15 8.22386 15.2239 8 15.5 8C15.7761 8 16 8.22386 16 8.5C16 8.77614 15.7761 9 15.5 9Z" fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7.5 15.5C7.5 15.5 9 13.5 12 13.5C15 13.5 16.5 15.5 16.5 15.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-
-            </div>
+            <MensajeErrorCarga />
           )
         )
       }
