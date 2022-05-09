@@ -1,20 +1,31 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ShoppingCartContext } from '../../context/shoppingCartContext';
 import { images } from '../../helpers/images';
 import './items.css';
 
-const Item = ({
-  id, 
-  imagen,
-  titulo,
-  autor,
-  precio,
-  precioDescuento,
-}) => {
+const Item = ({item}) => {
+
+  const {cartUpdate} = useContext(ShoppingCartContext);
+
+  const {
+    id, 
+    imagen,
+    titulo,
+    autor,
+    precio,
+    precioDescuento
+  } = item;
 
   const navigate = useNavigate();
+  const quantity = 1;
 
   const handleItemDetail = () => {
     navigate(`/item/${id}`);
+  }
+
+  const handleAdd = () => {
+    cartUpdate(id, quantity, item);
   }
 
   return (
@@ -22,7 +33,10 @@ const Item = ({
         <div className='card__img-container'>
             <img className='card__img' src={images(`${ imagen }`)} alt={titulo} />
 
-            <button className='add-button'>
+            <button 
+              className='add-button'
+              onClick={handleAdd}
+            >
             <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 6H22L19 16H6L3 6ZM3 6L2.25 3.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M9.99219 11H11.9922M13.9922 11H11.9922M11.9922 11V9M11.9922 11V13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>

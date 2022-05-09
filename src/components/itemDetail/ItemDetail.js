@@ -1,19 +1,30 @@
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { images } from '../../helpers/images';
 import ItemCounter from '../ui/ItemCounter';
+import { goToCart } from '../../helpers/viajarACarrito';
+
 import './itemDetail.css';
+import '../ui/itemCounter.css';
 
 
-const ItemDetail = ({
-  id,
-  imagen,
-  titulo,
-  autor,
-  genero,
-  stock,
-  precio,
-  precioDescuento,
-  sinopsis,
-}) => {
+const ItemDetail = ({ bookDetails }) => {
+
+  const [isBookAdded, setIsBookAdded] = useState(false);
+
+  const navigate = useNavigate();
+
+  const {
+    imagen,
+    titulo,
+    autor,
+    genero,
+    stock,
+    precio,
+    precioDescuento,
+    sinopsis,
+  } = bookDetails;
+
   return (
     <div className='animate__animated animate__fadeIn animate__fast'>
       <div className='book-title-container'>
@@ -55,20 +66,21 @@ const ItemDetail = ({
             }
           </div>
 
-          <div className='add-book-section'>
-            
-            <ItemCounter stock={stock}/>
-
-            <button className='add-button-details'>
-              Añadir a carrito
-              <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 6H22L19 16H6L3 6ZM3 6L2.25 3.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M11 19.5C11 20.3284 10.3284 21 9.5 21C8.67157 21 8 20.3284 8 19.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M17 19.5C17 20.3284 16.3284 21 15.5 21C14.6716 21 14 20.3284 14 19.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-
-            </button>
-          </div>
+            {
+              (isBookAdded) ? (
+                <button 
+                  className='detail-btn terminar-comprar-btn'
+                  onClick={() => goToCart(navigate)}
+                >
+                  Terminar mi compra
+                </button>
+              ) : (
+                <ItemCounter 
+                  item={bookDetails}
+                  setIsBookAdded = {setIsBookAdded}
+                />
+              )
+            }
         </div>
       </div>
     

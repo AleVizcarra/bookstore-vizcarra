@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
           <LoadingSpinner />
         ) : (
           (bookDetails) ? (
-            <ItemDetail {...bookDetails}/>
+            <ItemDetail bookDetails = {bookDetails}/>
           ) : (
             <MensajeErrorCarga mensaje='el libro'/>
           )

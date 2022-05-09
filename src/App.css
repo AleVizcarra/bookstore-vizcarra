@@ -1,7 +1,18 @@
 .main {
   width: 90%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
+}
+
+.swal2-title {
+  font-family: var(--title-sans-serif);
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+}
+
+.swal2-html-container {
+  font-family: var(--body-font);
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 426px) {

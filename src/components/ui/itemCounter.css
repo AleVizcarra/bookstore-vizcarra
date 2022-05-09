@@ -1,3 +1,10 @@
+/* Add section */
+.add-book-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    /* gap: 2rem; */
+}
 
 .item-counter {
     display: flex;
@@ -34,6 +41,46 @@
     border: 0.5px solid hsl(0, 0%, 86%);
 }
 
+/* Add button */
+.detail-btn {
+    background-color: var(--primary-color);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.detail-btn:hover {
+    background-color: hsl(178, 56%, 40%);
+}
+
+.add-button-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminar-comprar-btn {
+    width: 100%;
+    padding-block: 1rem;
+}
+
+
+@media screen and (max-width: 940px) {
+    .detail-btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.6rem;
+    }
+
+    .terminar-comprar-btn {
+        padding-block: 0.8rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .decrease-btn, .increase-btn  {
         width: 2rem;
@@ -49,5 +96,17 @@
     .decrease-btn, .increase-btn, .quantity {
         flex-grow: 1;
         padding-block: 7px;
+    }
+
+    .add-book-section {
+        /* width: 10%; */
+        margin-inline: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .add-button-details {
+        justify-content: center;
     }
 }

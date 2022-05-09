@@ -1,0 +1,23 @@
+
+.page404-container {
+    min-height: calc(100vh - 76.1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page404__text-container {
+    text-align: center;
+    font-family: var(--title-sans-serif);
+    color: rgb(176, 176, 176);
+}
+
+.page404__title {
+    font-size: 4rem;
+    letter-spacing: 2px;
+}
+
+.page404__message {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
