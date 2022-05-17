@@ -1,4 +1,227 @@
 .cart-container {
     min-height: calc(100vh - 76.1px);
     padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.cart-title {
+    font-family: var(--title-serif);
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Mensaje de carrito vacío*/
+.cart-message-container {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: var(--title-sans-serif);
+    color: #adb3b9;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.cart-message-container a {
+    padding: 0.7rem 1rem;
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cart-message-container a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Items List */
+.items-total-container {
+    width: 80%;
+    max-width: 1350px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: stretch;
+    gap: 2rem;
+}
+
+.cart-items-list {
+    min-height: 70vh;
+    /* overflow-y: auto; */
+    flex-grow: 1;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    border-right: 1px solid rgb(205, 205, 205);
+}
+
+.cart-items-list::-webkit-scrollbar {
+    width:10px;
+}
+
+.cart-items-list::-webkit-scrollbar-button:increment,.cart-items-list::-webkit-scrollbar-button {
+    display: none;
+}
+
+.cart-items-list::-webkit-scrollbar-thumb {
+    background-color: #dadada;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.cart-items-list::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+/* Sección precio total */
+.cart-total-container {
+    height: 380px;
+    flex-basis: 30%;
+    padding: 2.5rem 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--title-sans-serif);
+    color: #000;
+}
+
+.precio-envio {
+    width: 100%;
+    font-family: var(--title-sans-serif);
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.precio-envio div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-total-container button {
+    width: 100%;
+    padding-block: 0.5rem;
+    background-color: #000;
+    border: none;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: var(--title-sans-serif);
+}
+
+.cart-total-container button:hover {
+    background-color: var(--dark-color);
+}
+
+.cart-total-container button:last-of-type {
+    margin-top: 0.5rem;
+}
+
+.cart-total {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.cart-total h3 {
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1245px) {
+    .items-total-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 930px) {
+
+    .items-total-container {
+        gap: 1rem;
+    }
+
+    .cart-total-container {
+        flex-basis: 37%;
+        padding: 2.5rem 0 1rem 1rem;
+    }
+
+    .cart-total h3 {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .items-total-container {
+        flex-direction: column;
+    }
+
+    /* .cart-items-list {
+        height: fit-content;
+    } */
+
+    .cart-items-list {
+        width: 80%;
+        margin-inline: auto;
+        padding: 0;
+        border-right: none;
+    }
+
+    .cart-total-container {
+        width: 80%;
+        margin-inline: auto;
+        padding: 2rem 0;
+    }
+
+    .cart-total {
+        margin-block: 1.5rem
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .cart-items-list {
+        width: 100%;
+        padding-inline: 1rem;
+    }
+
+    .cart-total-container {
+        width: 100%;
+        padding-inline: 1rem;
+    }
+
+    .cart-items-list {
+        width: 95%;
+    }
+
+    .cart-total-container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .cart-title {
+        font-size: 1.8rem;
+    }
+
+    .cart-message-container {
+        font-size: 1.6rem;
+    }
+
+    .cart-message-container a {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .cart-title {
+        font-size: 1.5rem;
+    }
 }

@@ -25,7 +25,6 @@ export const booksStock = [
         descuentos: false,
         precioDescuento: "",
         stock: 20,
-        topVentas: true,
         sinopsis: "La psicóloga de la Universidad de Stanford Carol S. Dweck revela los rasgos de la gente con mentalidad de crecimiento, quienes con tenacidad pueden superar obstáculos. Esto descarta la creencia de que la inteligencia y otras aptitudes humanas son inalterables con el paso del tiempo. ",
         populares: true,
         novedades: true

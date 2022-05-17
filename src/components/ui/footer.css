@@ -18,7 +18,7 @@
   }
   
   .footer p {
-      font-family: var(--body-font);
+    font-family: var(--body-font);
     color: rgb(94, 94, 94);
   }
   
@@ -39,12 +39,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: var(--transition);
+    transition: background-color 0.3s ease-in-out;
   }
   
   .social-link:hover {
-    transform: translateY(-8px);
     background-color: rgb(71, 71, 71);
+  }
+
+    
+  .social-link .fa-instagram {
+    font-size: 1.4rem;
   }
   
   /* End of Footer */

@@ -1,16 +1,8 @@
-import { booksStock } from "../data/booksStock";
-
-const getBookById = (bookId) => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve(booksStock.find((book) => book.id === bookId));
-        }, 2000);
-    });
-};
+import { fetchBookById } from "../firebase";
 
 export const getBookDetails = async(bookId, setSelectedBook) => {
     try {
-        const bookDetails = await getBookById(bookId);
+        const bookDetails = await fetchBookById(bookId);
         setSelectedBook({
             loading: false,
             bookDetails,

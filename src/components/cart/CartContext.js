@@ -95,6 +95,7 @@ const CartContext = ({ children }) => {
         cartUpdate,
         removeItem,
         clear,
+        updateItemQuantity
     }
 
   return (

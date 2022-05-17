@@ -31,3 +31,23 @@ body {
   --light-accent-color: hsl(255, 55%, 78%);
   --dark-accent-color: hsl(256, 41%, 47%);
 }
+
+
+body::-webkit-scrollbar {
+  /* display: none; */
+  width:10px;
+}
+
+body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #b7b7b7;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}

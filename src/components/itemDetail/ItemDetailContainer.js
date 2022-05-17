@@ -10,7 +10,6 @@ import './itemDetail.css';
 const ItemDetailContainer = () => {
 
     const {itemId} = useParams(); //retorna itemId como string
-    const bookId = parseInt(itemId);
 
     const [selectedBook, setSelectedBook] = useState({
       loading: true,
@@ -20,7 +19,7 @@ const ItemDetailContainer = () => {
     const {loading, bookDetails} = selectedBook;
 
     useEffect(() => {
-        getBookDetails(bookId, setSelectedBook);
+        getBookDetails(itemId, setSelectedBook);
     }, [itemId])
     
 

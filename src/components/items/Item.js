@@ -14,7 +14,8 @@ const Item = ({item}) => {
     titulo,
     autor,
     precio,
-    precioDescuento
+    precioDescuento,
+
   } = item;
 
   const navigate = useNavigate();

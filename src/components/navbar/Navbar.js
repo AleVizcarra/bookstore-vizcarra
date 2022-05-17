@@ -1,11 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { useContext } from 'react';
 import BurgerButton from './BurgerButton';
 import CartWidget from './CartWidget';
 
 import './navbar.css';
+import { ShoppingCartContext } from '../../context/shoppingCartContext';
 
 const Navbar = () => {
+    
+    const {cart} = useContext(ShoppingCartContext);
+
   return (
     <nav className='navbar'>
         <div className='navbar__container'>
@@ -28,7 +32,9 @@ const Navbar = () => {
                     <li><NavLink to="/category/descuentos" className={({ isActive }) => isActive ? 'active-link': ''}>Descuentos</NavLink></li>
                 </ul>
                 {/* Cart Widget */}
-                <CartWidget />
+                {
+                (cart.length !== 0) && <CartWidget />
+                }
                 {/* Burger Button for Mobile Menu */}
                 <BurgerButton />
             </div>
