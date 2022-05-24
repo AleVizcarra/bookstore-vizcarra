@@ -114,10 +114,11 @@
     letter-spacing: 0.5px;
     cursor: pointer;
     font-family: var(--title-sans-serif);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .cart-total-container button:hover {
-    background-color: var(--dark-color);
+    background-color: var(--primary-color);
 }
 
 .cart-total-container button:last-of-type {
@@ -135,6 +136,12 @@
 
 .cart-total h3 {
     letter-spacing: 1px;
+}
+
+@media screen and (min-height: 1024px) {
+    .cart-items-list {
+        min-height: 50vh;
+    }
 }
 
 @media screen and (max-width: 1245px) {

@@ -15,10 +15,11 @@ const CartItem = ({item}) => {
         autor,
         precio,
         precioDescuento,
-        stock
+        stock,
     } = item.item;
 
-    const { quantity } = item;
+    const { quantity, total } = item;
+
 
     const handleDelete = () => {
         removeItem(id);
@@ -77,15 +78,7 @@ const CartItem = ({item}) => {
             </div>
 
             <div className='cart-item-price'>
-                <p>
-                    $
-                    {
-                        (precioDescuento === '') ? (
-                            precio * quantity
-                        ) : (
-                            precioDescuento * quantity
-                        )
-                    }
+                <p>${total}
                 </p>
             </div>
         </div>

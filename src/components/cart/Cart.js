@@ -9,24 +9,33 @@ import CartTotal from './CartTotal';
 
   const Cart = () => {
 
-  const { cart } = useContext(ShoppingCartContext);
-
-  const initialTotal = localStorage.getItem('cartTotal') ?? 0;
-
-  const [total, setTotal] = useState(initialTotal);
+  const { cart, cartTotal, setCartTotal } = useContext(ShoppingCartContext);
 
   const calculateTotal = () => {
-  let total = 0;
-
-  cart.forEach((book) => {
-    (book.item.precioDescuento !== '') ? (
-      total = total + (book.item.precioDescuento * book.quantity)
+    let total = 0;
+    let envio;
+    
+    total = cart.reduce((curr, book) => curr + book.total, 0);
+    
+    (total > 699) ? (
+      envio = 0
     ) : (
-      total = total + (book.item.precio * book.quantity)
+      envio = 50
     )
-  });
 
-    setTotal(total);
+    setCartTotal({
+      subtotal: total,
+      envio,
+      totalFinal: total + envio,
+    });
+
+    // Se guardó así porque no me guardaba el cartTotal actualizado =(, me guardaba el anterior
+    // localStorage.setItem('cartTotal', JSON.stringify({
+    //   subtotal: total,
+    //   envio,
+    //   totalFinal: total + envio,
+    // }));
+
   };
 
   useEffect(() => {
@@ -47,7 +56,7 @@ import CartTotal from './CartTotal';
             ) : (
               <div className='items-total-container'>
                 <CartItemsList cart={cart} />
-                <CartTotal total = {total}/>
+                <CartTotal total = {cartTotal}/>
               </div>
 
             )

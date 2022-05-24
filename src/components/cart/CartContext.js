@@ -6,12 +6,18 @@ import '../../App.css';
 const CartContext = ({ children }) => {
 
     const initialState = JSON.parse(localStorage.getItem('bookstoreCart')) ?? [];
-
     const [cart, setCart] = useState(initialState);
+
+    const initialTotal = JSON.parse(localStorage.getItem('cartTotal')) ?? {};
+    const [cartTotal, setCartTotal] = useState(initialTotal);
 
     useEffect(() => {
         localStorage.setItem('bookstoreCart', JSON.stringify(cart));
     }, [cart]);
+
+    useEffect(() => {
+        localStorage.setItem('cartTotal', JSON.stringify(cartTotal));
+    }, [cartTotal])
 
     // MÉTODOS
 
@@ -22,21 +28,36 @@ const CartContext = ({ children }) => {
 
     // Agregar libro
     const addItem = (item, quantity) => {
-        const addedBook = {item, quantity}
+        let totalItem = 0;
+        
+        if(item.precioDescuento === '') {
+            totalItem = item.precio * quantity;
+        } else {
+            totalItem = item.precioDescuento * quantity;
+        }
+
+        const addedBook = {
+            item, 
+            quantity,
+            total: totalItem,
+        }
         setCart(cart => [...cart, addedBook]);
     };
 
     // Modificar la cantidad de un libro ya en carrito
     const updateItemQuantity = (id, quantity) => {
+
         const updatedCart = cart.map((book) => 
             (book.item.id === id) ? (
                 {
                     ...book,
                     quantity: book.quantity + quantity,
+                    total: (book.total / book.quantity) * (book.quantity + quantity)
                 }
             ) : (
                 book
             )
+            
         );
 
         setCart(updatedCart);
@@ -76,6 +97,7 @@ const CartContext = ({ children }) => {
         ) : (
             addItem(item, quantity)
         )
+
     }
 
     // Eliminar 1 libro del carrito
@@ -92,10 +114,13 @@ const CartContext = ({ children }) => {
 
     const context = {
         cart,
+        setCart,
         cartUpdate,
         removeItem,
         clear,
-        updateItemQuantity
+        updateItemQuantity,
+        cartTotal,
+        setCartTotal,
     }
 
   return (

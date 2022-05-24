@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
     
 
   return (
-    <section className="item-detail-container">
+    <section className="item-detail-container animate__animated animate__fadeIn animate__fast">
       {
         (loading) ? (
           <LoadingSpinner />

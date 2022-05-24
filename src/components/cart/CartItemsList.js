@@ -12,7 +12,7 @@ const CartItemsList = ({ cart }) => {
                 <CartItem 
                     key={book.item.id}
                     item = {book}
-                  />
+                />
             ))
         }
     </div>

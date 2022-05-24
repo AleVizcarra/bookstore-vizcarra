@@ -11,10 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-/* #root {
-  overflow-x: hidden;
-} */
-
 :root {
   /* Fonts */
   --logo-font: "Cormorant Garamond", serif;

@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, where, doc, getDoc, addDoc } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -59,3 +59,11 @@ export const fetchBookById = async (bookId) => {
         ...snapshot.data(),
     };
 };
+
+// Agregar orden a firebase
+export const addOrderToFirestore = async (newOrder) => {
+    const ordersCollection = collection(db, 'orders');
+    const { id } = await addDoc(ordersCollection, newOrder);
+
+    return id;
+}

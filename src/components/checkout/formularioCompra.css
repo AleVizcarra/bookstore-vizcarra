@@ -1,0 +1,93 @@
+.checkout-form-container {
+    flex-grow: 1;
+    padding: 1.5rem 1rem;
+}
+
+.checkout-form-title {
+    font-family: var(--title-sans-serif);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.checkout-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+}
+
+.input-icon {
+    color: rgb(179, 179, 179);
+    transition: color 0.3s ease-in-out;
+}
+
+.input-container input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    font-family: var(--body-font);
+    color: #000;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+.input-container input:focus {
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.input-container input:focus ~ .input-icon {
+    color: var(--dark-color);
+}
+
+.input-container input::placeholder {
+    color: rgb(152, 152, 152);
+    font-style: italic;
+}
+
+.input-container input.error-email {
+    border-bottom: 2px solid #b2120f;
+}
+
+.message-error-email {
+    font-family: var(--body-font);
+    font-size: 0.7rem;
+    color: #b2120f;
+}
+
+.checkout-form button[type='submit'] {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-family: var(--title-sans-serif);
+    font-size: 1.5rem;
+    padding-block: 5px;
+    margin-top: 2.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.checkout-form button[type='submit']:hover {
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 850px) {
+    .checkout-form-title {
+        font-size: 1.6rem;
+    }
+
+    .input-container input {
+        font-size: 0.9rem;
+    }
+
+    .checkout-form button[type='submit'] {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,145 @@
+.resumen-compra-container {
+    height: 80vh;
+    background-color: #F9F9F9;
+    flex-basis: 35%;
+    padding: 1.5rem 1rem;
+}
+
+.resumen-compra-title {
+    font-family: var(--title-sans-serif);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #000;
+}
+
+.resumen-compra-items-container {
+    height: 80%;
+    overflow-y: auto;
+    padding-inline: 5px;
+}
+
+.resumen-compra-items-container::-webkit-scrollbar {
+    /* display: none; */
+    width:10px;
+}
+
+.resumen-compra-items-container::-webkit-scrollbar-button:increment,.resumen-compra-items-container::-webkit-scrollbar-button {
+    display: none;
+}
+
+.resumen-compra-items-container::-webkit-scrollbar-thumb {
+    background-color: #b7b7b7;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.resumen-compra-items-container::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+/* Resumen Item */
+.resumen-item{
+    display: flex;
+    gap: 10px;
+    padding-block: 0.5rem;
+}
+
+.resumen-item:not(:first-of-type) {
+    border-top: 1px solid #d4d4d4;
+}
+
+.resumen-item img{
+    height: 125px;
+    width: 85px;
+    object-fit: cover;
+}
+
+.resumen-item-info{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+}
+
+.resumen-item-title{
+    font-weight: 500;
+}
+
+.resumen-item-quantity{
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #727272;
+}
+
+.resumen-item-total{
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+/* Total */
+.resumen-compra-total-final {
+    padding-block: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumen-compra-total-final p {
+    font-family: var(--title-sans-serif);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.resumen-compra-total-final span {
+    display: block;
+    font-family: var(--body-font);
+    font-style: italic;
+    color: #727272;
+    font-size: 0.7rem;
+    position: relative;
+    left: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .resumen-compra-container {
+        flex-basis: 40%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .resumen-item-info{
+        font-size: 0.8rem;
+    }
+
+    .resumen-item-quantity{
+        font-size: 0.7rem;
+    }
+
+    .resumen-item-total{
+        font-size: 0.9rem;
+    }
+
+    .resumen-compra-total-final p {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .resumen-compra-container {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .resumen-item img{
+        height: 120px;
+        width: 80px;
+    }
+}
