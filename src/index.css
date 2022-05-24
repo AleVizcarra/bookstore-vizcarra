@@ -30,8 +30,7 @@ body {
 
 
 body::-webkit-scrollbar {
-  /* display: none; */
-  width:10px;
+  width:5px;
 }
 
 body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
@@ -39,9 +38,9 @@ body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #b7b7b7;
+  background-color: #d7d7d7;
   border-radius: 20px;
-  border: 2px solid #f1f2f3;
+  /* border: 2px solid #f1f2f3; */
 }
 
 body::-webkit-scrollbar-track {

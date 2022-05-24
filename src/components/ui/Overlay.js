@@ -4,10 +4,12 @@ import { MenuControlContext } from '../../context/menuControlContext';
 
 const Overlay = ({children}) => {
 
-    const {menuIsOpen} = useContext(MenuControlContext);
+    const {menuIsOpen, setMenuIsOpen} = useContext(MenuControlContext);
 
   return (
-    <div className={(menuIsOpen) ? 'overlay' : ''}>
+    <div 
+      className={(menuIsOpen) ? 'overlay' : ''}
+    >
         {children}
     </div>
   )

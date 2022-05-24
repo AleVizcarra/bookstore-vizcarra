@@ -71,6 +71,7 @@ const Navbar = () => {
                 
                 {/* Burger Button for Mobile Menu */}
                 <BurgerButton
+                    menuIsOpen = {menuIsOpen}
                     setMenuIsOpen = {setMenuIsOpen}
                 />
             </div>

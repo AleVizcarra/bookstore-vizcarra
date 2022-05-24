@@ -144,18 +144,19 @@
     width: 25px;
     height: 3px;
     background-color: #000;
+    transition: transform 0.3s ease-in-out;
 }
 
-.line1 .line1-menu-open {
-    transform: rotate(45deg) translate(0, 12px);
+.line1-menu-open {
+    transform: rotate(-45deg) translate(-6px, 4px);
 }
 
-.line2 .line2-menu-open {
+.line2-menu-open {
     opacity: 0;
 }
 
-.line3 .line3-menu-open {
-    transform: rotate(-45deg) translate(0, -12px);
+.line3-menu-open {
+    transform: rotate(45deg) translate(-5px, -4px);
 }
 
 /* ==== MEDIA QUERIES ==== */
@@ -200,7 +201,7 @@
     .navbar__menu {
         position: fixed;
         right: 0;
-        height: calc(100vh - 79.3px);
+        height: calc(100vh - 69px);
         top: 74px;
         background-color: #fff;
         padding-block: 2rem;
@@ -238,7 +239,7 @@
 
     .navbar__menu a {
         color: #000;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .navbar__burguer-button {
