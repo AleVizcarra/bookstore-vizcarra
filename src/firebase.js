@@ -6,12 +6,12 @@ import { getFirestore, collection, getDocs, query, where, doc, getDoc, addDoc } 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBKfdIQM4yUSYUR7VVJdBFhAfWUZbn1tGY",
-  authDomain: "plot-twist-bookstore.firebaseapp.com",
-  projectId: "plot-twist-bookstore",
-  storageBucket: "plot-twist-bookstore.appspot.com",
-  messagingSenderId: "1048859219287",
-  appId: "1:1048859219287:web:3e6ea3582c05662e9dda12"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase
