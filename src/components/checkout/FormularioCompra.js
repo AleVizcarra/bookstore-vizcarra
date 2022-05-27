@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useContext, useState } from 'react';
 import { ShoppingCartContext } from '../../context/shoppingCartContext';
-import { addOrderToFirestore } from '../../firebase';
+import { addOrderToFirestore, updateStock } from '../../firebase';
 import { useForm } from '../../hooks/useForm';
 
 import './formularioCompra.css';
@@ -75,6 +75,7 @@ const FormularioCompra = () => {
             navigate('/', { replace: true });
         });
 
+        await updateBooksStock();
 
         reset();
         resetCart();
@@ -92,6 +93,12 @@ const FormularioCompra = () => {
             totalFinal: 0,
         });
     }
+
+    const updateBooksStock = async() => {
+        cart.forEach((book) => {
+            updateStock(book);
+        });
+    };
 
   return (
     <div className='checkout-form-container'>
