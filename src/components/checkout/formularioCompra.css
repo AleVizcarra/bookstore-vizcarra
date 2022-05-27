@@ -60,6 +60,13 @@
     font-family: var(--body-font);
     font-size: 0.7rem;
     color: #b2120f;
+    display: flex;
+    align-items: center;
+}
+
+.message-error-email svg {
+    width: 18px;
+    margin-right: 3px;
 }
 
 .checkout-form button[type='submit'] {

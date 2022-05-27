@@ -54,6 +54,19 @@ const CartItem = ({item}) => {
                     <path d="M21 7L16 7M3 7L8 7M8 7V3.6C8 3.26863 8.26863 3 8.6 3L15.4 3C15.7314 3 16 3.26863 16 3.6V7M8 7L16 7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             </button>
+            {
+                (quantity === stock) && (
+                    <p className='stock-message'>
+                        <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7L12 13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12 17.01L12.01 16.9989" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+
+                        Has alcanzado el total de item disponibles
+                    </p>
+                )
+            }
         </div>
 
         <div className="cart-item-quatity-price">

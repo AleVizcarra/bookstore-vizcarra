@@ -48,11 +48,17 @@ const CartContext = ({ children }) => {
     const updateItemQuantity = (id, quantity) => {
 
         const updatedCart = cart.map((book) => 
-            (book.item.id === id) ? (
+            (book.item.id === id && (book.quantity + quantity) <= book.item.stock) ? (
                 {
                     ...book,
                     quantity: book.quantity + quantity,
                     total: (book.total / book.quantity) * (book.quantity + quantity)
+                }
+            ) : (book.item.id === id && (book.quantity + quantity) > book.item.stock) ? (
+                {
+                    ...book,
+                    quantity: book.item.stock,
+                    total: (book.total/book.quantity) * book.item.stock,
                 }
             ) : (
                 book

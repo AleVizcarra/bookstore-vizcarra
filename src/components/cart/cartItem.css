@@ -56,6 +56,21 @@
     color: #000;
 }
 
+.stock-message {
+    font-family: var(--body-font);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgb(184, 21, 53);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.stock-message svg {
+    width: 18px;
+    margin-right: 3px;
+}
+
 .cart-item-quatity-price {
     font-family: var(--body-font);
     display: flex;
