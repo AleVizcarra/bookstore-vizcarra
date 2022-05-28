@@ -74,36 +74,48 @@ const CartContext = ({ children }) => {
         - Si SÍ está -> Modifica la cantidad de ese libro agregado
     */
     const cartUpdate = (id, quantity, item) => {
-        const isBookInCart = isInCart(id);
 
-        (isBookInCart) ? (
+        if(item.stock === 0) {
             Swal.fire({
-                icon: 'warning',
-                title: 'Libro ya agregado',
-                text: `¿Desea agregar ${quantity} más al carrito ?`,
-                showConfirmButton: true,
-                confirmButtonText: 'Sí',
-                showDenyButton: true,
-                denyButtonText: 'No',
-                denyButtonColor: '#bbb8e3',
-                color: '#000'
-            }).then ((respuesta) => {
-                if(respuesta.isConfirmed) {
-                    updateItemQuantity(id, quantity);
-                    
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Libro agregado al carrito',
-                        timer: 2000,
-                        showConfirmButton: false,
-                        color: '#000',
-                      });
-                };
-            })
-        ) : (
-            addItem(item, quantity)
-        )
+                position: 'top',
+                // title: 'Your work has been saved',
+                text: 'Lo sentimos. No contamos con el stock suficiente',
+                background: 'rgb(255, 182, 182)',
+                color: 'rgb(183, 43, 43)',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        } else {
+            const isBookInCart = isInCart(id);
 
+            (isBookInCart) ? (
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Libro ya agregado',
+                    text: `¿Desea agregar ${quantity} más al carrito ?`,
+                    showConfirmButton: true,
+                    confirmButtonText: 'Sí',
+                    showDenyButton: true,
+                    denyButtonText: 'No',
+                    denyButtonColor: '#bbb8e3',
+                    color: '#000'
+                }).then ((respuesta) => {
+                    if(respuesta.isConfirmed) {
+                        updateItemQuantity(id, quantity);
+                        
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Libro agregado al carrito',
+                            timer: 2000,
+                            showConfirmButton: false,
+                            color: '#000',
+                        });
+                    };
+                })
+            ) : (
+                addItem(item, quantity)
+            )
+        }
     }
 
     // Eliminar 1 libro del carrito
