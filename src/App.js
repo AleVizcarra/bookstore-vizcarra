@@ -11,6 +11,7 @@ import Page404 from './pages/Page404';
 import './App.css';
 import MenuContext from './context/MenuContext';
 import Overlay from './components/ui/Overlay';
+import HomePage from './pages/HomePage';
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
             <Navbar />
             <main className='main'>
                 <Routes>
-                  <Route path='/' element={<ItemListContainer />}/>
+                  {/* <Route path='/' element={<ItemListContainer />}/> */}
+                  <Route path='/' element={<HomePage />}/>
                   <Route path='/category/:categoryId' element={<ItemListContainer />}/>
                   <Route path='/item/:itemId' element={<ItemDetailContainer />}/>
                   <Route path='/cart' element={<Cart />} />

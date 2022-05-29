@@ -44,7 +44,7 @@ const ItemListContainer = () => {
   }, [params]);
 
   return (
-    <section className='item-list-container'>
+    <section id="catalogo" className={`item-list-container ${(params.categoryId === undefined) ? 'catalogo' : ''}`}>
       {
         (loading) ? (
           <LoadingSpinner />
