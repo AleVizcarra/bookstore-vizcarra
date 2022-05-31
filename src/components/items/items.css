@@ -14,7 +14,8 @@
 /* ===== ITEM ===== */
 .card {
     width: 90%;
-    max-height: 385px;
+    height: 386px;
+    /* max-height: 400px; */
     background-color: hsl(186, 100%, 98%);
 
     display: flex;
@@ -92,19 +93,25 @@
     font-size: 0.85rem;
     font-style: italic;
     margin-top: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #575e66;
+}
+
+.out-of-stock-message {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #dc143c;
 }
 
 .price-arrow-container {
     display: flex;
+    padding-bottom: 10px;
 }
 
 .card__prices-container {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-block: 1rem;
 }
 
 .previous-book-price {

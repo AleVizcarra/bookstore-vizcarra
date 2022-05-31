@@ -142,13 +142,13 @@
 
 .navbar__burguer-button div {
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: #000;
     transition: transform 0.3s ease-in-out;
 }
 
 .line1-menu-open {
-    transform: rotate(-45deg) translate(-6px, 4px);
+    transform: rotate(-45deg) translate(-5px, 4px);
 }
 
 .line2-menu-open {

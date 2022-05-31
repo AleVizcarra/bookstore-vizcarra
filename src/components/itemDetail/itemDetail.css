@@ -1,6 +1,8 @@
 /* Contenedor */
 .item-detail-container {
     min-height: calc(100vh - 84px);
+    width: 90%;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -26,16 +28,17 @@
 
 .book-details {
     /* min-height: 85vh; */
-    width: 90%;
+    width: 100%;
     margin-inline: auto;
     /* padding-block: 2.8rem; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .book-img-container-details {
-    width: 35%;
+    width: 33%;
     min-width: 295px;
     background-color: hsl(184, 38%, 72%);
     padding-block: 3rem;
@@ -45,7 +48,8 @@
 }
 
 .book-img-container-details img {
-    width: 60%;
+    width: 47%;
+    min-width: 200px;
     max-width: 240px;
     object-fit: cover;
     box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.25);
@@ -61,12 +65,21 @@
     margin-bottom: 0.5rem;
 }
 
+.book-info-subtitle {
+    font-size: 1.1rem;
+}
+
 .book-info-text {
+    font-size: 0.95rem;
     line-height: 1.5rem;
 }
 
+.item-detail-oosm {
+    margin-top: 1.5rem;
+}
+
 .prices-container {
-    margin-block: 2.5rem;
+    margin-block: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -80,7 +93,7 @@
 }
 
 .current-price-details {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
     font-weight: 700;
 }
@@ -89,7 +102,7 @@
 
 @media screen and (max-width: 1280px) {
     .book-img-container-details img {
-        min-width: 240px;
+        min-width: 225px;
     }
 }
 
@@ -98,9 +111,6 @@
         width: 100%;
     }
 
-    .book-details {
-        width: 100%;
-    }
 }
 
 @media screen and (min-height: 950px) {
@@ -157,7 +167,7 @@
 
 @media screen and (max-width: 768px){
     .book-img-container-details img {
-        min-width: 220px;
+        min-width: 200px;
     }
 }
 
@@ -201,7 +211,7 @@
     }
 
     .book-img-container-details img {
-        max-height: 330px;
+        max-height: 320px;
     }
 }
 

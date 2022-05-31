@@ -50,6 +50,9 @@ const ItemDetail = ({ bookDetails }) => {
             <div className='info-subcontainer'>
               <h3 className='book-info-subtitle'>Sinopsis</h3>
               <p className='book-info-text'>{sinopsis}</p>
+              {
+                (stock === 0) && <p className='out-of-stock-message item-detail-oosm'>AGOTADO</p>
+              }
             </div>
             <div className='prices-container'>
               {

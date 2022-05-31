@@ -15,7 +15,7 @@ const Item = ({item}) => {
     autor,
     precio,
     precioDescuento,
-
+    stock
   } = item;
 
   const navigate = useNavigate();
@@ -53,6 +53,9 @@ const Item = ({item}) => {
           <div className='book-info'>
             <h3 className='book-title'>{titulo}</h3>
             <p className='book-author'>{autor}</p>
+            {
+              (stock === 0) && <p className='out-of-stock-message'>AGOTADO</p>
+            }
           </div>
             
 
