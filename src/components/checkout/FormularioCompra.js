@@ -100,6 +100,11 @@ const FormularioCompra = () => {
         });
     };
 
+    const handleTelInput = (e) => {
+        const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', null];
+        (numbers.includes(e.nativeEvent.data)) && handleInputChange(e);
+    }
+
   return (
     <div className='checkout-form-container'>
         <h2 className='checkout-form-title'>Datos de Compra</h2>
@@ -127,10 +132,13 @@ const FormularioCompra = () => {
             <div className='input-container'>
                 <input 
                     type="tel"
-                    placeholder='Teléfono' 
+                    placeholder='Teléfono (solo números): 6699471234' 
                     name="phone"
                     value={phone}
-                    onChange = {handleInputChange}
+                    onChange = {handleTelInput}
+                    pattern="[0-9]{10}"
+                    minLength={10}
+                    maxLength={10}
                     required 
                 />
                 <svg className='input-icon' width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +196,12 @@ const FormularioCompra = () => {
                 )
             }
 
-            <button type="submit">Realizar compra</button>
+            <button 
+                type="submit"
+                disabled = {(emailConfirmation.length !== 0) ? false : true}
+            >
+                Realizar compra
+            </button>
         </form>
     </div>
   )

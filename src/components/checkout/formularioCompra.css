@@ -85,6 +85,12 @@
     background-color: var(--primary-color);
 }
 
+.checkout-form button[type='submit']:disabled {
+    background-color: rgb(100, 100, 100);
+    opacity: 0.5;
+    cursor: initial;
+}
+
 @media screen and (max-width: 850px) {
     .checkout-form-title {
         font-size: 1.6rem;
