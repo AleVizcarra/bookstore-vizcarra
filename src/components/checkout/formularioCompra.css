@@ -23,6 +23,15 @@
     gap: 0.5rem;
 }
 
+.tel-pattern {
+    font-family: var(--body-font);
+    font-size: 0.75rem;
+    padding-left: 2rem;
+    margin-top: 1px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
 .input-icon {
     color: rgb(179, 179, 179);
     transition: color 0.3s ease-in-out;
