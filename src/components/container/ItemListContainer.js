@@ -56,7 +56,7 @@ const ItemListContainer = () => {
             </>
             
           ) : (
-            <MensajeErrorCarga />
+            <MensajeErrorCarga mensaje = 'No fue posible cargar los productos'/>
           )
         )
       }

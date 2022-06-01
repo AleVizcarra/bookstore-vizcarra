@@ -4,6 +4,7 @@
     width: 80px;
     height: 80px;
     align-self: center;
+    margin-block: auto;
 }
   
 .lds-dual-ring:after {

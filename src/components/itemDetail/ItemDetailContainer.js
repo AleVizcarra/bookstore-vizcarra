@@ -29,10 +29,10 @@ const ItemDetailContainer = () => {
         (loading) ? (
           <LoadingSpinner />
         ) : (
-          (bookDetails) ? (
+          (Object.keys(bookDetails).length !== 0) ? (
             <ItemDetail bookDetails = {bookDetails}/>
           ) : (
-            <MensajeErrorCarga mensaje='el libro'/>
+            <MensajeErrorCarga mensaje='Lo sentimos, no contamos con el producto que estás buscando'/>
           )
         )
       }

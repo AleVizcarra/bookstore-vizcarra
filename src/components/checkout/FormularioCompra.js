@@ -201,7 +201,7 @@ const FormularioCompra = () => {
 
             <button 
                 type="submit"
-                disabled = {(emailConfirmation.length !== 0) ? false : true}
+                disabled = {((name.length !== 0) && (phone.length !== 0) && (email.length !== 0) && (emailConfirmation.length !== 0)) ? false : true}
             >
                 Realizar compra
             </button>

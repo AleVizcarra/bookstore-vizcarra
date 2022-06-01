@@ -6,7 +6,7 @@ import './mensajeError.css';
 const MensajeErrorCarga = ({mensaje}) => {
   return (
     <div className='mensaje-error-carga'>
-        <p>No fue posible cargar {mensaje}</p>
+        <p>{mensaje}</p>
         <svg width="24" height="24" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.5 9C8.22386 9 8 8.77614 8 8.5C8 8.22386 8.22386 8 8.5 8C8.77614 8 9 8.22386 9 8.5C9 8.77614 8.77614 9 8.5 9Z" fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M15.5 9C15.2239 9 15 8.77614 15 8.5C15 8.22386 15.2239 8 15.5 8C15.7761 8 16 8.22386 16 8.5C16 8.77614 15.7761 9 15.5 9Z" fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
