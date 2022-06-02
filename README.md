@@ -29,6 +29,8 @@ También puedes ver el sitio online en el siguiente [link](#)
 
 El usuario puede visualizar todo el catálogo de productos en home/tienda que se encuentra en la ruta principal '/'. También puede filtrar los libros por categorías (novedades, populares y descuentos) viajando a través de los links que se encuentran en el navbar. En el navbar también se encuentra el cart widget, el cual, al clickearlo dirige al usuario al carrito de compras que en un inicio se encuentra vacío.
 
+![Gif categorías](https://github.com/AleVizcarra/bookstore-vizcarra/blob/main/gifs/categorias.gif)
+
 Los productos pueden ser agregados al carrito de dos formas. Al hacer click en el botón con el ícono de "agregar al carrito" que se encuentra en las cards de los productos o el usuario puede ingresar al detalle de los productos, donde encontrará el botón de "Añadir al carrito", haciendo click en la flecha que aparece en la parte inferior derecha de las cards. En el detalle del producto, una vez que se agregue el libro al carrito, aparecerá un botón de "Terminar compra" el cual permite viajar al carrito.
 
 NOTAS:
