@@ -10,7 +10,7 @@ E-commerce de una librería desarrollado como proyecto final para el curso de Re
 
 ### React Router
 
-Se instaló para poder para establecer rutas en la aplicación y poder navegar entre ellas.
+Se instaló para establecer rutas en la aplicación y poder navegar entre ellas.
 
 ### SweetAlert2
 
@@ -22,7 +22,22 @@ Si el proyecto es descargado es necesario ejecutar el comando `npm install` para
 
 ## Para ejecutar el proyecto
 
-Para correr la aplicación localmente se ejecuta el comando `npm start`
+Para correr la aplicación localmente se ejecuta el comando `npm start`.
 También puedes ver el sitio online en el siguiente [link](#)
 
-## Navegación
+## Uso y Navegación
+
+El usuario puede visualizar todo el catálogo de productos en home/tienda que se encuentra en la ruta principal '/'. También puede filtrar los libros por categorías (novedades, populares y descuentos) viajando a través de los links que se encuentran en el navbar. En el navbar también se encuentra el cart widget, el cual, al clickearlo dirige al usuario al carrito de compras que en un inicio se encuentra vacío.
+
+Los productos pueden ser agregados al carrito de dos formas. Al hacer click en el botón con el ícono de "agregar al carrito" que se encuentra en las cards de los productos o el usuario puede ingresar al detalle de los productos, donde encontrará el botón de "Añadir al carrito", haciendo click en la flecha que aparece en la parte inferior derecha de las cards. En el detalle del producto, una vez que se agregue el libro al carrito, aparecerá un botón de "Terminar compra" el cual permite viajar al carrito.
+
+NOTAS:
+
+- Si se intenta agregar un libro que ya se enecuentra en el carrito, saltará una alerta preguntándole al usuario si desea volver a agregar dicho libro al carrito. Si el usuario confirma, el libro NO se duplicará el artículo en el carrito sino que se aumentará la cantidad del ya existente.
+
+- Si se intenta agregar al carrito un libro que se encuentra agotado, aparecerá una alerta indicando que el producto no está disponible.
+
+En el carrito de compras se puede visualizar un listado de los productos agregados, cada uno con su cantidad y precio a pagar por dicha cantidad. Se muestra también el subtotal (precio de los productos), el precio de envío (ya sea $50 o "gratis" dependiendo de si se alcanza el mínimo de compra o no) y el precio total(subtotal más el precio de envío), así como los botones de "Vaciar carrito" y "Tramitar pedido".
+
+Al dar click en el botón "Tramitar pedido", se redireccionará al usuario a la ruta '/order-checkout' donde se visualizará un formulario para que el usuario llene con sus datos, así como un resumen de compra. Una vez que el usuario proporcione todos sus datos, se habilitará el botón "Realizar compra". IMPORTANTE: Para poder terminar la compra, el e-mail debe de ser ingresado dos veces de manera correcta (deben coincidir).
+Al hacer click en "Realizar compra", la orden se guarda en la base de datos y salta una alerta indicando el id de la orden.
