@@ -33,8 +33,8 @@ El usuario puede visualizar todo el catálogo de productos en home/tienda que se
 
 Los productos pueden ser agregados al carrito de dos formas:
 
-1.- Al hacer click en el botón con el ícono de "agregar al carrito" que se encuentra en las cards de los productos (se agrega por default 1 artículo).
-2.- El usuario puede ingresar al detalle de los productos haciendo click en la flecha que aparece en la parte inferior derecha de las cards, ahí encontrará el botón de "Añadir al carrito". En el detalle del producto, se puede indicar la cantidad de artículos que se desea añadir y una vez que se agregue el libro al carrito (con la cantidad indicada), aparecerá un botón de "Terminar compra" el cual permite viajar al carrito.
+- Al hacer click en el botón con el ícono de "agregar al carrito" que se encuentra en las cards de los productos (se agrega por default 1 artículo).
+- El usuario puede ingresar al detalle de los productos haciendo click en la flecha que aparece en la parte inferior derecha de las cards, ahí encontrará el botón de "Añadir al carrito". En el detalle del producto, se puede indicar la cantidad de artículos que se desea añadir y una vez que se agregue el libro al carrito (con la cantidad indicada), aparecerá un botón de "Terminar compra" el cual permite viajar al carrito.
 
 ![Agregar productos al carrito](https://github.com/AleVizcarra/bookstore-vizcarra/blob/main/gifs/agregar-a-carrito.gif)
 
